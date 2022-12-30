@@ -1,36 +1,136 @@
-{% extends 'index.html' %}
-{% block content %}
-<div class="container" style="margin-top: 80px;">
-    <h1 class="text-center" style="color:black;">Tech Stack Used</h1>
-    <p style="font-size: 20px; font-weight:bold; color:black;">Our project, Crapguru, utilizes a number of powerful
-        technologies to achieve our goals of creating awareness and educating the masses about responsible
-        consumption
-        and production, as well as climate action.
+<!DOCTYPE html>
+<html>
 
-        One key aspect of our project is our use of Google Cloud Platform (GCP) to power our app and API endpoint.
-        We
-        use Cloud Run to host our app, which allows us to easily deploy and scale our application to meet the needs
-        of
-        our users. Additionally, we use Cloud Functions to create an API endpoint, which enables us to interact with
-        our
-        app and data in a flexible and cost-effective manner.
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Crap Guru</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/js/index_.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/Navigation-with-Button.css">
+    <link rel="icon" type="image" sizes="32x32" href="../static/img/favicon.ico">
+    <!-- <script src="{{ url_for('static', filename='js/index_.js') }}"></script> -->
 
-        We also rely on Cloud Storage to store our machine learning models and data, which allows us to easily
-        access
-        and manipulate these resources as needed. And for storing our Docker images, we use the Container Registry,
-        which enables us to manage and deploy our containerized applications with ease.
+</head>
 
-        In terms of software and frameworks, we use Python as our primary programming language, and TensorFlow as
-        our
-        machine learning library. We also utilize MobileNet, a pre-trained deep learning model, to classify and
-        segregate different types of waste. Finally, we use Flask to build our app and API endpoint, which provides
-        a
-        lightweight and easy-to-use web framework.
+<body>
+    <header class="text-center text-white pt-5 "
+        style="background: url(&quot;../static/img/waste1.jpg&quot;);background-size: contain; ">
+        <!-- <div class="overlay"> -->
+            <nav class="navbar navbar-light navbar-expand-md bg-white border rounded-0 navigation-clean-button fixed-top opacity-75"
+                style="background: var(--bs-white);filter: brightness(86%) contrast(200%);">
+                <div class="container-fluid"><a class="navbar-brand" href="#">Crap Guru</a><button
+                        data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                            class="visually-hidden">Toggle navigation</span><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#team_mem">Team</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/info#home">Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        <!-- </div> -->
+        <div class="container-fluid " id="home" style="background: rgb(0,0,0,0.4);">
+            <div class="row">
+                <div class="container col-xl-9 mx-auto mt-4 position-relative" >
+                    <h1 class="mb-1" ><br>Crap Guru ♻️</h1>
+                    <h2 class="mb-5" ><br>A Sustainable AI solution for <br>Efficient Waste Segregation <br> &nbsp;<br></h2>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto position-relative">
+                    <form method="post" enctype="multipart/form-data" id="upload-file">
+                        <div class="row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <input class="form-control" type="file" id="myFile" name="filename" accept="image/*">
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button id="submission" class="btn btn-primary btn-lg" type="submit">Upload</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
-        Altogether, these technologies and frameworks enable us to create a powerful and efficient platform for
-        addressing two of the UN's Sustainable Development Goals
-    </p>
+                <div class="container-fluid my-3">
+                    <img id="display-img" src="" alt="" class="img-thumbnail "
+                        style="width: 50%; visibility: hidden; object-fit: contain;">
+                </div>
+                <div class="row justify-content-center py-1 mb-5" style="margin-top: 20px;">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="" id="predictionCt" style="display:none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container" style="margin-top: 80px;">
+        <h1 class="text-center" style="color:black;">Tech Stack</h1>
+        <p class="container-fluid "style="font-size: 20px; font-weight:bold; color:black;"><br>Our project, Crapguru, utilizes a number of powerful
+            technologies to achieve our goals of creating awareness and educating the masses about responsible
+            consumption
+            and production, as well as climate action.
 
-</div>
+            One key aspect of our project is our use of Google Cloud Platform (GCP) to power our app and API endpoint.
+            We use Cloud Run to host our app, which allows us to easily deploy and scale our application to meet the needs
+            of
+            our users. Additionally, we use Cloud Functions to create an API endpoint, which enables us to interact with
+            our
+            app and data in a flexible and cost-effective manner.
 
-{% endblock %}
+            We also rely on Cloud Storage to store our machine learning models and data, which allows us to easily
+            access
+            and manipulate these resources as needed. And for storing our Docker images, we use the Container Registry,
+            which enables us to manage and deploy our containerized applications with ease.
+
+            In terms of software and frameworks, we use Python as our primary programming language, and TensorFlow as
+            our
+            machine learning library. We also utilize MobileNet, a pre-trained deep learning model, to classify and
+            segregate different types of waste. Finally, we use Flask to build our app and API endpoint, which provides
+            a
+            lightweight and easy-to-use web framework.
+
+            Altogether, these technologies and frameworks enable us to create a powerful and efficient platform for
+            addressing two of the UN's Sustainable Development Goals.
+        </p>
+        <div class="container-fluid">
+            <h1 class="text-center" style="color:black;">Flow Diagram</h1>
+            <img src="../static/img/flow.jpeg" alt="">
+        </div>
+    </div>
+    <footer class="bg-light footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© Crap Guru 2022. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
