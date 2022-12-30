@@ -1,5 +1,3 @@
 Flask
 numpy
-pandas
-opencv-python-headless
 tensorflow-cpu
