@@ -6,7 +6,7 @@ import json
 import requests
 app = Flask(__name__) 
 @app.route('/')
-def index_view():
+def home():
     return render_template('home.html')  
 
 
@@ -26,6 +26,11 @@ def prediction():
     predictions = result["predictions"]
     print(predictions) 
 
-
+@app.route("/info")
+def info():
+    return render_template('info.html')  
+    
 if __name__ == '__main__':
-    app.run(debug=True, port=8000) 
+    app.run(debug=True, port=8000)  
+
+
