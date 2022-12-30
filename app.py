@@ -37,7 +37,6 @@ def result():
         else:
             txt ="Your Waste is Non-Biodegradable"
         print(txt)
-        #return render_template('res.html',data = txt)
         return jsonify({"pred":pred,"text":txt})
 
 
