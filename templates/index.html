@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Crap Guru</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/js/index_.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="../static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/Navigation-with-Button.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../static/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../static/assets/css/styles.css">
+
+    <!-- <script src="{{ url_for('static', filename='js/index_.js') }}"></script> -->
+
+</head>
+
+<body>
+    <header class="text-center text-white pt-5 pb-4"  
+
+        >
+        <!-- <div class="overlay"> -->
+            <nav class="navbar navbar-light navbar-expand-md bg-white border rounded-0 navigation-clean-button fixed-top opacity-75"
+                style="background: var(--bs-white);filter: brightness(86%) contrast(200%);">
+                <div class="container-fluid"><a class="navbar-brand" href="{{url_for('home')}}">Crap Guru</a><button
+                        data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                            class="visually-hidden">Toggle navigation</span><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#team_mem">Team</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="{{url_for('info')}}">Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav> 
+        </header>
+        <!-- </div> -->  
+        <div class = "container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+        
+        <footer class="footer-basic">
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Crapguru © 2022</p>
+        </footer>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

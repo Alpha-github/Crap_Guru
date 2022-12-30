@@ -2,13 +2,15 @@
 name = "gccp-proj"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Tejaswini <tejaswinithota83@gmail.com~>"]
 readme = "README.md"
 packages = [{include = "gccp_proj"}]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-flask = "^2.2.2"
+python = ">=3.9,<3.12"
+Flask = "^2.2.2"
+Pillow = "^9.3.0"
+tensorflow = "^2.11.0"
 
 
 [build-system]
