@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+=======
+
+$("document").ready(function () {
+    $(function () {
+        $('#myFile').click(function (event) {
+
+            var par = document.getElementById("display-img")
+            par.style.visibility = "hidden";
+            par.src = "";
+            par.alt = "";
+            par.className="img-thumbnail";
+            document.getElementById("predictionCt").className = "alert alert-danger";
+            document.getElementById("predictionCt").style.display = "None";
+
+        });
+    });
+});
+
+>>>>>>> 55c575bfceb24315cdbf4ef84f38f0114fd50d5f
 $("document").ready(function () {
     $(function () {
         $('#myFile').change(function (event) {
@@ -33,7 +53,11 @@ $(document).ready(function () {
                 }
             },
             error: function (data) {
+<<<<<<< HEAD
                 alert("error");
+=======
+                alert("Please wait, or try again in a few minutes!");
+>>>>>>> 55c575bfceb24315cdbf4ef84f38f0114fd50d5f
             }
         });
         event.preventDefault();

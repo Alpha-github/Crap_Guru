@@ -2,7 +2,6 @@
 name = "gccp-proj"
 version = "0.1.0"
 description = ""
-authors = ["Tejaswini <tejaswinithota83@gmail.com~>"]
 readme = "README.md"
 packages = [{include = "gccp_proj"}]
 
