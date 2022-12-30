@@ -50,7 +50,7 @@ $(document).ready(function () {
                 }
             },
             error: function (data) {
-                alert("error");
+                alert("Please wait, or try again in a few minutes!");
             }
         });
         event.preventDefault();
