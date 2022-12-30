@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-UPLOADS = './static/uploads'
+UPLOADS = './static/uploads/'
 
 def pre_process(img):
     img = tf.keras.preprocessing.image.load_img(img, target_size=(96, 96))
