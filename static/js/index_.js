@@ -1,3 +1,20 @@
+
+$("document").ready(function () {
+    $(function () {
+        $('#myFile').click(function (event) {
+
+            var par = document.getElementById("display-img")
+            par.style.visibility = "hidden";
+            par.src = "";
+            par.alt = "";
+            par.className="img-thumbnail";
+            document.getElementById("predictionCt").className = "alert alert-danger";
+            document.getElementById("predictionCt").style.display = "None";
+
+        });
+    });
+});
+
 $("document").ready(function () {
     $(function () {
         $('#myFile').change(function (event) {

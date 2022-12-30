@@ -7,8 +7,7 @@ import json
 
 app = Flask(__name__)
 
-UPLOADS = "./static/uploads"
-
+UPLOADS = './static/uploads/'
 
 def pre_process(img):
     img = tf.keras.preprocessing.image.load_img(img, target_size=(96, 96))
@@ -41,8 +40,7 @@ def result():
         else:
             txt = "Your Waste is Treatable, separate from other wet waste"
         print(txt)
-        # return render_template('res.html',data = txt)
-        return jsonify({"pred": pred, "text": txt})
+        return jsonify({"pred":pred,"text":txt})
 
 
 @app.route("/info")
