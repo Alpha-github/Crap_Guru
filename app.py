@@ -17,7 +17,7 @@ def pre_process(img):
 
 @app.route('/',methods=['GET','POST'])
 def home():
-    return render_template("index.html")
+    return render_template("home.html")
 
 
 @app.route("/resultpage", methods=["POST", "GET"])

@@ -2,13 +2,11 @@
 $("document").ready(function () {
     $(function () {
         $('#myFile').click(function (event) {
-
             var par = document.getElementById("display-img")
             par.style.visibility = "hidden";
             par.src = "";
             par.alt = "";
             par.className="img-thumbnail";
-            document.getElementById("predictionCt").className = "alert alert-danger";
             document.getElementById("predictionCt").style.display = "None";
 
         });
@@ -37,7 +35,13 @@ $(document).ready(function () {
             contentType: false,
             cache: false,
             processData: false,
+            beforeSend: function(){
+                document.getElementById("myFile").disabled = true;
+                document.getElementById("submission").disabled = true;
+            },
             success: function (data) {
+                document.getElementById("myFile").disabled = false;
+                document.getElementById("submission").disabled = false;
                 if(data.pred==0){
                     document.getElementById("predictionCt").className = "alert alert-success";
                     document.getElementById("display-img").className="img-thumbnail border border-4 border-success";
@@ -51,6 +55,8 @@ $(document).ready(function () {
             },
             error: function (data) {
                 alert("Please wait, or try again in a few minutes!");
+                setTimeout(window.location.reload(),2000);
+
             }
         });
         event.preventDefault();

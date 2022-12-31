@@ -103,3 +103,16 @@
 .navigation-clean-button .navbar-text .action-button:hover {
   background: #66d7d7;
 }
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
