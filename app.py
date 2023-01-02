@@ -3,6 +3,7 @@ import requests
 import tensorflow as tf
 import numpy as np
 import json
+import os
 
 app = Flask(__name__)
 
@@ -37,6 +38,7 @@ def result():
         else:
             txt ="Your Waste is Non-Biodegradable"
         print(txt)
+        os.remove(UPLOADS+'test.jpg')
         return jsonify({"pred":pred,"text":txt})
 
 
