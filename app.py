@@ -1,17 +1,21 @@
 from flask import Flask, render_template, request, jsonify
 import requests
-import tensorflow as tf
+# import tensorflow as tf
 import numpy as np
 import json
 import os
+from PIL import Image
 
 app = Flask(__name__)
 
 UPLOADS = './static/uploads/'
 
 def pre_process(img):
-    img = tf.keras.preprocessing.image.load_img(img, target_size=(96, 96))
-    img = tf.keras.preprocessing.image.img_to_array(img)
+    # img = tf.keras.preprocessing.image.load_img(img, target_size=(96, 96))
+    img = Image.open(img)
+    img = img.resize((96,96))
+    # img = tf.keras.preprocessing.image.img_to_array(img)
+    img = np.asarray(img)
     img = np.expand_dims(img, axis=0)
     return img
 
